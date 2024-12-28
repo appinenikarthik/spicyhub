@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Cricket <input type="checkbox" id="chkcricket"/>
+    Tennis <input type="checkbox" id="chktennis"/>
+    Football <input type="checkbox" id="chkfootball"/>
+    Chess <input type="checkbox" id="chkchess"/>
+    <br/>
+    <span id="spanans"/>
+
+</body>
+<script>
+
+        let chkcricket=document.querySelector("#chkcricket");
+        let chktennis=document.querySelector("#chktennis");
+        let chkfootball=document.querySelector("#chkfootball");
+        let chkchess=document.querySelector("#chkchesss");
+        let spanans=document.querySelector("#spanans");
+
+        chkcricket.addEventListener("change",()=>{
+            if(chkcricket.checked)
+            {
+                    spanans.innerHTML="Cricket";
+            }
+        })
+</script>
+
+</html>

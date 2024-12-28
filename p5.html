@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        /* General form styles */
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Input field styles */
+        form input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Button styles */
+        form input[type="button"] {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Answer span styles */
+        form span {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Label styles */
+        form label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Break styles for spacing */
+        form br {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="txtno1">Number1:</label>
+        <input type="text" id="txtno1" placeholder="Enter first number"/> <br/>
+        
+        <label for="txtno2">Number2:</label>
+        <input type="text" id="txtno2" placeholder="Enter second number"/> <br/>
+
+        <input type="button" id="btnAdd" value="Add"/>
+        <input type="button" id="btnSubtract" value="Subtract"/>
+        <input type="button" id="btnMultiply" value="Multiply"/>
+        <input type="button" id="btnDivide" value="Division"/>
+
+        <span id="spanans"></span>
+    </form>
+
+    <script>
+        // Get elements
+        const txtno1 = document.querySelector("#txtno1");
+        const txtno2 = document.querySelector("#txtno2");
+        const btnAdd = document.querySelector("#btnAdd");
+        const btnSubtract = document.querySelector("#btnSubtract");
+        const btnMultiply = document.querySelector("#btnMultiply");
+        const btnDivide = document.querySelector("#btnDivide");
+        const spanans = document.querySelector("#spanans");
+
+        // Add event listeners for each button
+        btnAdd.addEventListener("click", () => {
+            const no1 = parseFloat(txtno1.value);
+            const no2 = parseFloat(txtno2.value);
+            spanans.textContent = `Result: ${no1 + no2}`;
+        });
+
+        btnSubtract.addEventListener("click", () => {
+            const no1 = parseFloat(txtno1.value);
+            const no2 = parseFloat(txtno2.value);
+            spanans.textContent = `Result: ${no1 - no2}`;
+        });
+
+        btnMultiply.addEventListener("click", () => {
+            const no1 = parseFloat(txtno1.value);
+            const no2 = parseFloat(txtno2.value);
+            spanans.textContent = `Result: ${no1 * no2}`;
+        });
+
+        btnDivide.addEventListener("click", () => {
+            const no1 = parseFloat(txtno1.value);
+            const no2 = parseFloat(txtno2.value);
+            if (no2 !== 0) {
+                spanans.textContent = `Result: ${no1 / no2}`;
+            } else {
+                spanans.textContent = "Error: Division by zero is not allowed.";
+            }
+        });
+    </script>
+
+</body>
+</html>
